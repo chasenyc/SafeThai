@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929122532) do
+ActiveRecord::Schema.define(version: 20160929150513) do
 
   create_table "dohmh_inspections", force: :cascade do |t|
     t.integer  "camis",                 limit: 10,                                  null: false
@@ -33,10 +33,22 @@ ActiveRecord::Schema.define(version: 20160929122532) do
     t.date     "grade_date"
     t.string   "inspection_type",       limit: 255
     t.date     "record_date"
-    t.datetime "created_at",                        default: '2016-09-29 13:49:03', null: false
-    t.datetime "updated_at",                        default: '2016-09-29 13:49:03', null: false
+    t.datetime "created_at",                        default: '2016-09-29 15:56:19', null: false
+    t.datetime "updated_at",                        default: '2016-09-29 15:56:19', null: false
   end
 
   add_index "dohmh_inspections", ["camis", "inspection_date", "violation_code"], name: "primary_dohmh_inspections_1", unique: true
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name",                           null: false
+    t.string   "address",                        null: false
+    t.float    "lat",                            null: false
+    t.float    "lng",                            null: false
+    t.string   "grade",      default: "Unknown", null: false
+    t.date     "grade_date",                     null: false
+    t.string   "cuisine",                        null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
 end
