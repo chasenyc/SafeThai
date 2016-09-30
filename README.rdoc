@@ -1,28 +1,19 @@
-== README
+## Safe Thai
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is live [here](https://safethai.herokuapp.com/).
 
-Things you may want to cover:
+Safe Thai is a small web application to show you where you can safely eat Thai food without taking any risks to your well-being. This was built using Rails, React + Redux utilizing a Postgres database.
 
-* Ruby version
+### Main Functionality:
 
-* System dependencies
+* Display lists of Thai restaurants
+* Filter results by grade range
+* Non Patented SmartLinking(tries to link to best website for restaurant)
+* Utilizes Google Maps API and Google Geocoding API (to store latitude and longitude)
+* Updates list of restaurants based on bounds of google maps
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Missing Features
+* Individual pages for restaurants. Some backend api infrastructure is built but frontend still needs implementation
+* Some kind of map marker animation when hovering over restaurant card
+* Setup scheduled rake tasks to continually update database
+* I wanted to serve more than just Thai restaurants; however, in order to store `lat` and `lng` for all restaurants I would leave the free tier of Google Geocoding API rate limits

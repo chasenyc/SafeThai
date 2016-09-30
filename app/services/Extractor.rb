@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'csv'
-require 'sqlite3'
 
 require_relative 'loader'
 
