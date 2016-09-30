@@ -5,13 +5,13 @@ class CreateDohmhInspections < ActiveRecord::Migration
       t.string   "dba",                   limit: 255
       t.string   "address",               limit: 255
       t.string   "boro",                  limit: 255
-      t.string   "building"              
+      t.string   "building"
       t.string   "street",                limit: 255
       t.integer  "zipcode",               null: false
       t.string   "phone",                 limit: 255
       t.string   "action",                limit: 255
       t.string   "violation_code",        limit: 255
-      t.text   "violation_description"
+      t.text      "violation_description"
       t.string   "critical_flag",         limit: 255
       t.string   "cuisine_description",   limit: 255
       t.date     "inspection_date",       null: false
@@ -23,8 +23,6 @@ class CreateDohmhInspections < ActiveRecord::Migration
 
       t.timestamps                        null: false, default: Time.now
     end
-
-    add_index :dohmh_inspections, ["camis", "inspection_date", "violation_code"], name: "primary_dohmh_inspections_1", unique: true
 
   end
 end

@@ -40,8 +40,6 @@ ActiveRecord::Schema.define(version: 20160929160652) do
     t.datetime "updated_at",                        default: '2016-09-30 05:24:23', null: false
   end
 
-  add_index "dohmh_inspections", ["camis", "inspection_date", "violation_code"], name: "primary_dohmh_inspections_1", unique: true, using: :btree
-
   create_table "restaurants", force: :cascade do |t|
     t.string   "name",                           null: false
     t.string   "address",                        null: false

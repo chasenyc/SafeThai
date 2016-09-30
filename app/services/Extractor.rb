@@ -1,8 +1,6 @@
 require 'open-uri'
 require 'csv'
 
-require_relative 'loader'
-
 class Extractor
 
   def initialize(url = "https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD")
@@ -30,6 +28,7 @@ class Extractor
     puts "scanning records and distilling data"
     CSV.foreach(Rails.root.join('tmp', 'temp.csv'), :headers => true, :header_converters => lambda { |h| h.downcase.gsub(' ', '_') }) do |csv_obj|
       @results << transform_data(csv_obj.to_h)
+      load_into_db if @results.length > 500
     end
     puts "completed extracting #{@results.length} records."
   end
@@ -37,6 +36,7 @@ class Extractor
   def load_into_db
     loader = Loader.new(@results)
     loader.update_database
+    @results = []
   end
 
   def transform_data(row)

@@ -5,7 +5,7 @@ class Loader
 
   def update_database
     puts 'inserting records into database.'
-    record_values.each_slice(500) do |chunk|
+    record_values.each_slice(100) do |chunk|
       sql = "INSERT INTO dohmh_inspections
       #{keys_for_rows}
       VALUES #{chunk.join(', ').gsub("'NULL'", "NULL")};"
