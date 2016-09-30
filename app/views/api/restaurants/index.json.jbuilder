@@ -1,1 +1,1 @@
-json.array! @restaurants, :id, :name, :lat, :lng, :grade
+json.array! @restaurants, :id, :name, :lat, :lng, :grade, :address

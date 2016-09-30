@@ -13,3 +13,127 @@
  *= require_tree .
  *= require_self
  */
+
+  body {
+    font-family: sans-serif;
+  }
+
+ .content {
+   height: 100%;
+ }
+
+ .map {
+   width: 500px;
+   height: 500px;
+   float: left;
+   position: relative;
+ }
+
+ .restaurant-index-item {
+   width: 100%;
+   margin-bottom: 12px;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: space-between;
+   box-shadow: 0 4px 4px rgba(0,0,0,0.24),0 0 4px rgba(0,0,0,0.12);
+ }
+
+ .user-pane {
+   margin-top: 75px;
+   display: flex;
+   justify-content: center;
+ }
+
+ .right-half {
+   width: 400px;
+   margin-left: 50px;
+   height: 460px;
+   overflow-y: scroll;
+   background: #fff;
+   padding: 20px 20px 20px 20px;
+ }
+
+ .right-half.restaurant-details {
+   display: flex;
+   flex-direction: column;
+   margin-top: 20px;
+ }
+
+ .index-item-info {
+   margin: 10px 10px 10px 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 100%;
+ }
+
+ .index-item-category {
+   text-transform: uppercase;
+   font-weight: 600;
+   font-size: 18px;
+   text-align: left;
+ }
+
+ .index-item-copy {
+   margin-left: 15px;
+   font-weight: 300;
+ }
+
+ header {
+  text-align: right;
+  position: absolute;
+  z-index: 10;
+  background: #071b36;
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 70px;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.24),0 0 4px rgba(0,0,0,0.12);
+ }
+
+ h1, h5 {
+  margin-bottom: 10px;
+  margin-right: 10px;
+ }
+
+ .single-restaurant-show {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+ }
+
+ .single-restaurant-map {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .restaurant-list {
+   padding-left: 0;
+   list-style-position: inside;
+   margin-top: 0;
+ }
+
+ .header-name {
+   /*margin: 7px 0 0 0;*/
+ }
+
+ .header-favorites {
+   margin: 4px 0 4px 0;
+   font-size: 14px;
+ }
+
+ .button-holder {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+ }
+
+ .filter {
+   font-weight: bold;
+ }
+
+ .header-link {
+   text-decoration: none;
+   color: #fba919;
+ }

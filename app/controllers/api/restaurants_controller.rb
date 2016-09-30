@@ -5,7 +5,7 @@ class Api::RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Bench.find(params[:id])
+    @restaurant = restaurant.find(params[:id])
     render :show
   end
 
